@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Basic({ children }) {
+function Basic({ content }) {
   return (
     <div>
-      {children}
+      {content}
     </div>
   );
 }
 
 Basic.propTypes = {
-  children: PropTypes.element.isRequired,
+  content: PropTypes.element.isRequired,
 };
 
 export default Basic;

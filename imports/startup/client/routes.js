@@ -10,6 +10,6 @@ import App from '../../ui/pages/App';
 FlowRouter.route('/', {
   name: 'Main',
   action() {
-    mount(Basic, { children: <App /> });
+    mount(Basic, { content: <App /> });
   },
 });
