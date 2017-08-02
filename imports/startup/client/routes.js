@@ -1,9 +1,15 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 
+// layouts
+import Basic from '../../ui/layouts/Basic';
+
+// pages
+import App from '../../ui/pages/App';
+
 FlowRouter.route('/', {
   name: 'Main',
   action() {
-    mount(() => <div>Hello</div>);
+    mount(Basic, { children: <App /> });
   },
 });
