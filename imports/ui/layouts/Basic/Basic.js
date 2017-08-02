@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 function Basic({ content }) {
   return (
-    <div>
+    <MuiThemeProvider>
       {content}
-    </div>
+    </MuiThemeProvider>
   );
 }
 
