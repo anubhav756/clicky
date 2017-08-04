@@ -1,14 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { createContainer } from 'meteor/react-meteor-data';
 import ClickyButton from '../../components/ClickyButton';
+import Colors from '../../../api/colors/colors';
 
-function App() {
+function handleTouchTap(color) {
+  Meteor.call('colors.click', color);
+}
+
+function App({ colors }) {
   return (
     <div>
-      <ClickyButton clicks={1000} color="red" handleTouchTap={console.log} />
-      <ClickyButton clicks={1000} color="yellow" handleTouchTap={console.log} />
-      <ClickyButton clicks={1000} color="blue" handleTouchTap={console.log} />
+      {
+        colors.map(({ name, clicks }) => (
+          <ClickyButton
+            key={name}
+            clicks={clicks}
+            name={name}
+            handleTouchTap={handleTouchTap}
+          />
+        ))
+      }
     </div>
   );
 }
 
-export default App;
+App.propTypes = {
+  colors: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default createContainer(() => {
+  Meteor.subscribe('allColors');
+
+  return {
+    colors: Colors.find().fetch(),
+  };
+}, App);

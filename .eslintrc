@@ -1,6 +1,9 @@
 {
   "extends": "@meteorjs/eslint-config-meteor",
   "globals": {
+    "Meteor": false,
+    "Mongo": false,
+    "SimpleSchema": false,
     "FlowRouter": false
   }
 }

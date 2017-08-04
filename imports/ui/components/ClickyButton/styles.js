@@ -7,7 +7,7 @@ export default {
     height: '80vh',
   },
   buttonContent: {
-    fontSize: 30,
+    fontSize: 50,
     height: '80vh',
     width: '25vw',
     display: 'table-cell',
