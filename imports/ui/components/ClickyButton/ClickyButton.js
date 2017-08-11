@@ -1,31 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Paper,
-  FlatButton,
-} from 'material-ui';
 import { ALL_COLORS } from '../../../api/colors/colors';
-import colors from './colors';
 import styles from './styles';
 
-function ClickyButton({ name, clicks, handleTouchTap }) {
+function ClickyButton({ colorName, clicks, handleClick, ...otherProps }) {
   return (
-    <Paper zDepth={3} style={styles.buttonContainer}>
-      <FlatButton
-        {...colors[name]}
-        onTouchTap={() => handleTouchTap(name)}
+    <div {...otherProps}>
+      <button
+        onClick={() => handleClick(colorName)}
+        className={`waves-effect waves-light btn z-depth-4 valign-wrapper ${colorName}`}
         style={styles.button}
       >
-        <div style={styles.buttonContent}>{clicks}</div>
-      </FlatButton>
-    </Paper>
+        {clicks.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+      </button>
+    </div>
   );
 }
 
 ClickyButton.propTypes = {
-  name: PropTypes.oneOf(ALL_COLORS).isRequired,
+  colorName: PropTypes.oneOf(ALL_COLORS).isRequired,
   clicks: PropTypes.number.isRequired,
-  handleTouchTap: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default ClickyButton;
