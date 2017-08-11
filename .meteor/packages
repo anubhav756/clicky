@@ -21,3 +21,4 @@ kadira:flow-router
 react-meteor-data
 aldeed:simple-schema
 aldeed:collection2
+materialize:materialize@=0.99.0
