@@ -11,7 +11,7 @@ function ClickyButton({ colorName, clicks, handleClick, ...otherProps }) {
         className={`waves-effect waves-light btn z-depth-4 valign-wrapper ${colorName}`}
         style={styles.button}
       >
-        {clicks.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+        <div>{clicks.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</div>
       </button>
     </div>
   );
