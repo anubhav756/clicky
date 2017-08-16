@@ -7,8 +7,8 @@ function ClickyButton({ colorName, clicks, handleClick, ...otherProps }) {
   return (
     <div {...otherProps}>
       <button
+        className={`waves-effect btn-large z-depth-5 ${colorName}`}
         onClick={() => handleClick(colorName)}
-        className={`waves-effect waves-light btn z-depth-4 valign-wrapper ${colorName}`}
         style={styles.button}
       >
         <div>{clicks.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</div>

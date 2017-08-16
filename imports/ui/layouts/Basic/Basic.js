@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './styles';
 
 function Basic({ content }) {
   return (
-    <div>
+    <div className="container valign-wrapper" style={styles.container}>
       {content}
     </div>
   );
