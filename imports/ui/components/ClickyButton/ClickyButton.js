@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ALL_COLORS } from '../../../api/colors/colors';
+import { ALL_TEAMS } from '../../../api/teams/teams';
 import styles from './styles';
 
-function ClickyButton({ colorName, clicks, handleClick, ...otherProps }) {
+function ClickyButton({ name, clicks, handleClick, ...otherProps }) {
   return (
     <div {...otherProps}>
       <button
-        className={`waves-effect btn-large z-depth-5 ${colorName}`}
-        onClick={() => handleClick(colorName)}
+        className={`waves-effect btn-large z-depth-5 ${name}`}
+        onClick={() => handleClick(name)}
         style={styles.button}
       >
         <div>{clicks.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</div>
@@ -18,7 +18,7 @@ function ClickyButton({ colorName, clicks, handleClick, ...otherProps }) {
 }
 
 ClickyButton.propTypes = {
-  colorName: PropTypes.oneOf(ALL_COLORS).isRequired,
+  name: PropTypes.oneOf(ALL_TEAMS).isRequired,
   clicks: PropTypes.number.isRequired,
   handleClick: PropTypes.func.isRequired,
 };

@@ -1,11 +1,11 @@
 // collections
-import '../../api/colors/colors';
+import '../../api/teams/teams';
 
 // publications
-import '../../api/colors/server/publications';
+import '../../api/teams/server/publications';
 
 // methods
-import '../../api/colors/methods';
+import '../../api/teams/methods';
 
 // fixtures
 import './fixtures';

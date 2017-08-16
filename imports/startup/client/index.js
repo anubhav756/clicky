@@ -2,4 +2,4 @@
 import './routes';
 
 // methods
-import '../../api/colors/methods';
+import '../../api/teams/methods';

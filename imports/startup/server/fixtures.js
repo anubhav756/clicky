@@ -1,5 +1,5 @@
-import Colors, { ALL_COLORS } from '../../api/colors/colors';
+import Teams, { ALL_TEAMS } from '../../api/teams/teams';
 
-if (!Colors.find().count()) {
-  ALL_COLORS.forEach(name => Colors.insert({ name }));
+if (!Teams.find().count()) {
+  ALL_TEAMS.forEach(name => Teams.insert({ name }));
 }

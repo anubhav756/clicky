@@ -2,23 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createContainer } from 'meteor/react-meteor-data';
 import ClickyButton from '../../components/ClickyButton';
-import Colors from '../../../api/colors/colors';
+import Teams from '../../../api/teams/teams';
 import styles from './styles';
 
-function handleClick(color) {
-  Meteor.call('colors.click', color);
+function handleClick(team) {
+  Meteor.call('teams.click', team);
 }
 
-function App({ colors }) {
+function App({ teams }) {
   return (
     <div className="row" style={styles.container}>
       {
-        colors.map(({ name, clicks }) => (
+        teams.map(({ name, clicks }) => (
           <ClickyButton
             key={name}
             className="col s12 l4 center-align"
             clicks={clicks}
-            colorName={name}
+            name={name}
             handleClick={handleClick}
           />
         ))
@@ -28,13 +28,13 @@ function App({ colors }) {
 }
 
 App.propTypes = {
-  colors: PropTypes.arrayOf(PropTypes.object).isRequired,
+  teams: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default createContainer(() => {
-  Meteor.subscribe('allColors');
+  Meteor.subscribe('allTeams');
 
   return {
-    colors: Colors.find().fetch(),
+    teams: Teams.find().fetch(),
   };
 }, App);
