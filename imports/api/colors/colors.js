@@ -1,4 +1,4 @@
-export const ALL_COLORS = ['red', 'yellow', 'blue'];
+export const ALL_COLORS = ['red', 'green', 'blue'];
 
 const Colors = new Mongo.Collection('colors');
 
