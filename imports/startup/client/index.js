@@ -1,5 +1,5 @@
 // routes
-import './routes';
+import '../../lib/routes';
 
-// methods
+// methods (for optimistic-ui)
 import '../../api/teams/methods';

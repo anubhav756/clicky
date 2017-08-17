@@ -2,10 +2,16 @@ import React from 'react';
 import { mount } from 'react-mounter';
 
 // layouts
-import Basic from '../../ui/layouts/Basic';
+import Basic from '../ui/layouts/Basic';
 
 // pages
-import App from '../../ui/pages/App';
+import App from '../ui/pages/App';
+
+if (Meteor.isServer) {
+  FastRender.route('/', function () {
+    this.subscribe('allTeams');
+  });
+}
 
 FlowRouter.route('/', {
   name: 'Main',

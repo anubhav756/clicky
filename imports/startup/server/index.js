@@ -9,3 +9,6 @@ import '../../api/teams/methods';
 
 // fixtures
 import './fixtures';
+
+// routes (for fast-render)
+import '../../lib/routes';
