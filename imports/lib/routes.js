@@ -7,14 +7,11 @@ import Basic from '../ui/layouts/Basic';
 // pages
 import App from '../ui/pages/App';
 
-if (Meteor.isServer) {
-  FastRender.route('/', function () {
-    this.subscribe('allTeams');
-  });
-}
-
 FlowRouter.route('/', {
   name: 'Main',
+  subscriptions() {
+    this.register('allTeams', Meteor.subscribe('allTeams'));
+  },
   action() {
     mount(Basic, { content: <App /> });
   },
