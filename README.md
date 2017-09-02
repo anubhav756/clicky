@@ -1,5 +1,5 @@
 # Clicky!
-Clicky is a simple meteor app to demonstrate the concepts of *PubSub* and *Optimistic UI* features in MeteorJS.
+Clicky is a simple meteor app to demonstrate the concepts of *Fast Rendering* and *Optimistic UI* features in Meteor.
 
 **[Live Demo](https://clicky.now.sh)**
 
