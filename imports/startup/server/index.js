@@ -11,4 +11,4 @@ import '../../api/teams/methods';
 import './fixtures';
 
 // routes (for fast-render)
-import '../../lib/routes';
+import './routes';

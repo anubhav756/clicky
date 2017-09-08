@@ -31,4 +31,10 @@ App.propTypes = {
   teams: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default createContainer(() => ({ teams: Teams.find().fetch() }), App);
+export default createContainer(() => {
+  Meteor.subscribe('allTeams');
+
+  return {
+    teams: Teams.find().fetch(),
+  };
+}, App);
