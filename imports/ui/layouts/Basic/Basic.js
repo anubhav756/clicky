@@ -1,17 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 import styles from './styles';
 
-function Basic({ content }) {
+// pages
+import App from '../../pages/App';
+
+function Basic({ match: { path } }) {
   return (
     <div className="container valign-wrapper" style={styles.container}>
-      {content}
+      <Route exact path={`${path}`} component={App} />
     </div>
   );
 }
 
 Basic.propTypes = {
-  content: PropTypes.element.isRequired,
+  match: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Basic;

@@ -4,7 +4,6 @@
     "Meteor": false,
     "Mongo": false,
     "SimpleSchema": false,
-    "FlowRouter": false,
     "FastRender": false,
   }
 }
