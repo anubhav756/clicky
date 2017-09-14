@@ -4,6 +4,6 @@
     "Meteor": false,
     "Mongo": false,
     "SimpleSchema": false,
-    "FastRender": false,
+    "FastRender": false
   }
 }
