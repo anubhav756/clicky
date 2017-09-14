@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "lint": "eslint .",
+    "lint": "node_modules/eslint/bin/eslint.js .",
     "deploy": "meteor-now -e ROOT_URL=https://clicky.now.sh -e MONGO_URL=mongodb://anubhav756:asdasd@ds163387.mlab.com:63387/clicky -e NODE_ENV=production --public"
   },
   "dependencies": {
