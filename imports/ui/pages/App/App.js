@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import ClickyButton from '../../components/ClickyButton';
 import Teams from '../../../api/teams/teams';
 import styles from './styles';
 
-function handleClick(team) {
-  Meteor.call('teams.click', team);
+function handleClick(name) {
+  Meteor.call('teams.click', name);
 }
 
 function App({ teams }) {

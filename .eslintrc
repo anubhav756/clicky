@@ -1,9 +1,3 @@
 {
-  "extends": "@meteorjs/eslint-config-meteor",
-  "globals": {
-    "Meteor": false,
-    "Mongo": false,
-    "SimpleSchema": false,
-    "FastRender": false
-  }
+  "extends": "@meteorjs/eslint-config-meteor"
 }

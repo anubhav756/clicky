@@ -1,5 +1,7 @@
-export const ALL_TEAMS = ['red', 'green', 'blue'];
+import { Mongo } from 'meteor/mongo';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
+export const ALL_TEAMS = ['red', 'green', 'blue'];
 const Teams = new Mongo.Collection('teams');
 
 Teams.schema = new SimpleSchema({
